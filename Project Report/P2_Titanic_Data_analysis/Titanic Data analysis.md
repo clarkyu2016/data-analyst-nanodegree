@@ -15,13 +15,6 @@ import seaborn as sns
 
 titanic_df = pd.read_csv('titanic-data.csv')
 ```
-
-    Populating the interactive namespace from numpy and matplotlib
-    
-
-    C:\Users\Clark Yu\Anaconda3\envs\DAND\lib\site-packages\IPython\core\magics\pylab.py:161: UserWarning: pylab import has clobbered these variables: ['norm', 'mean', 'cov']
-    `%matplotlib` prevents importing * from pylab and numpy
-      "\n`%matplotlib` prevents importing * from pylab and numpy"
     
 
 ## Raise questions
