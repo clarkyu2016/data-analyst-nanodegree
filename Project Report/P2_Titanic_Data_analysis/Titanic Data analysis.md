@@ -19,6 +19,11 @@ titanic_df = pd.read_csv('titanic-data.csv')
     Populating the interactive namespace from numpy and matplotlib
     
 
+    C:\Users\Clark Yu\Anaconda3\envs\DAND\lib\site-packages\IPython\core\magics\pylab.py:161: UserWarning: pylab import has clobbered these variables: ['norm', 'mean', 'cov']
+    `%matplotlib` prevents importing * from pylab and numpy
+      "\n`%matplotlib` prevents importing * from pylab and numpy"
+    
+
 ## Raise questions
 Thus Titanic is a well-known tragedy, so the mortality rate is an important mesurement of the severity, in other word, the survived rate should be analyzed in detail.My major question is "What factors can influenced the survival rate and how to influence?"
 
@@ -167,7 +172,7 @@ There are 891 rows in Titanic Data, it is noted that age,cabin and embarked data
 
 
 ```python
-titanic_df_dropna = titanic_df.dropna(subset=['Age']) #use it when use age variables
+titanic_df_dropna = titanic_df.dropna(subset=['Age']) #use it when use age variables 把age当中的无效项目排除
 titanic_df_dropna.describe()
 ```
 
@@ -296,7 +301,7 @@ titanic_df_dropna['Age'].plot.box()
 
 
 
-    <matplotlib.axes._subplots.AxesSubplot at 0x9908b38>
+    <matplotlib.axes._subplots.AxesSubplot at 0x1a6447b8>
 
 
 
@@ -312,7 +317,7 @@ titanic_df_dropna['Age'].plot.hist(bins=8)
 
 
 
-    <matplotlib.axes._subplots.AxesSubplot at 0x9a6c780>
+    <matplotlib.axes._subplots.AxesSubplot at 0x1a621ba8>
 
 
 
@@ -331,7 +336,7 @@ titanic_df['Fare'].plot.hist()
 
 
 
-    <matplotlib.axes._subplots.AxesSubplot at 0x9da9278>
+    <matplotlib.axes._subplots.AxesSubplot at 0x1a81eef0>
 
 
 
@@ -347,7 +352,7 @@ titanic_df['Fare'].plot.box()
 
 
 
-    <matplotlib.axes._subplots.AxesSubplot at 0x9db3550>
+    <matplotlib.axes._subplots.AxesSubplot at 0x1a9bf5f8>
 
 
 
@@ -381,7 +386,7 @@ titanic_df['Pclass'].value_counts().plot.bar() #注意value_counts()的使用
 
 
 
-    <matplotlib.axes._subplots.AxesSubplot at 0xb9b05c0>
+    <matplotlib.axes._subplots.AxesSubplot at 0x1ad6d3c8>
 
 
 
@@ -613,7 +618,7 @@ plt.title('Survival rate by class')
 
 
 
-    <matplotlib.text.Text at 0xbd95eb8>
+    <matplotlib.text.Text at 0x1b0ef1d0>
 
 
 
@@ -637,7 +642,7 @@ plt.title('Survival rate by sex')
 
 
 
-    <matplotlib.text.Text at 0xc1fbe10>
+    <matplotlib.text.Text at 0x1b69beb8>
 
 
 
@@ -647,6 +652,32 @@ plt.title('Survival rate by sex')
 
 #### 3. Survival rate by age
 Next, I try to focus the relationship between age and survival rate.The below graph is my initial grahp without the difference of sex. It can see the middle is lower than sides. 
+
+
+```python
+female_df_age = titanic_df[titanic_df['Sex'] == 'female']['Age'].dropna()
+male_df_age = titanic_df[titanic_df['Sex'] == 'male']['Age'].dropna()
+survived_df_age = titanic_df[titanic_df['Survived'] == 1]['Age'].dropna()
+unsurvived_df_age = titanic_df[titanic_df['Survived'] == 0]['Age'].dropna()
+```
+
+
+```python
+import seaborn as sns
+sns.kdeplot(female_df_age, shade=True, shade_lowest=False,label='Female')
+sns.kdeplot(male_df_age, shade=True, shade_lowest=False,label='Male')
+```
+
+
+
+
+    <matplotlib.axes._subplots.AxesSubplot at 0x18378358>
+
+
+
+
+![png](output_29_1.png)
+
 
 
 ```python
@@ -661,12 +692,12 @@ plt.title('Survival rate of age')
 
 
 
-    <matplotlib.text.Text at 0xc49b128>
+    <matplotlib.text.Text at 0x194fd438>
 
 
 
 
-![png](output_28_1.png)
+![png](output_30_1.png)
 
 
 Then, to deeply understand I add another variable - sex. In the below graph it can be rougly seen that female has higer average survival rate than male, but the graph seems not good-looking.
@@ -688,15 +719,38 @@ plt.title('Survival rate of age and sex')
 
 
 
-    <matplotlib.text.Text at 0xc7c7e10>
+    <matplotlib.text.Text at 0x174425c0>
 
 
 
 
-![png](output_30_1.png)
+![png](output_32_1.png)
 
 
 Next, I select the age range, from 0 to 80(because the maxium in the df.describe() tell us the max is 80),the interval is 10.The result can be seen in the below. Now it seems good, we can clearly find that for total, 20~40 years old people seems has relatively lower survival rate than others.Female has higer rate than males, and if you are a female, older age maybe an advantage, which is opposite to the male's condition.
+
+
+```python
+generate_range_df(age_group).plot(kind="bar")
+generate_range_df(age_group).plot(kind="line")
+#New in version 0.17.0: Each plot kind has a corresponding method on the DataFrame.plot accessor: 
+#df.plot(kind='line') is equivalent to df.plot.line().
+```
+
+
+
+
+    <matplotlib.axes._subplots.AxesSubplot at 0x18971b38>
+
+
+
+
+![png](output_34_1.png)
+
+
+
+![png](output_34_2.png)
+
 
 
 ```python
@@ -712,8 +766,7 @@ def generate_range_df(age_group):
         values.append(value)
         #print value
         index_n.append(n)
-        n = n + 5
-        
+        n = n + 5    
     return pd.DataFrame({'Survived': values},index=index_n)
 
 def draw_survived_plot(df,label):
@@ -736,12 +789,12 @@ plt.legend()
 
 
 
-    <matplotlib.legend.Legend at 0xc8eae80>
+    <matplotlib.legend.Legend at 0x18cf8c18>
 
 
 
 
-![png](output_32_1.png)
+![png](output_35_1.png)
 
 
 #### 4. Survival rate by family factor
@@ -760,7 +813,7 @@ draw_barplot('SibSp','Siblings/Spouses',"red")
 ```
 
 
-![png](output_34_0.png)
+![png](output_37_0.png)
 
 
 
@@ -769,7 +822,7 @@ draw_barplot('Parch','Parents/Children',"yellow")
 ```
 
 
-![png](output_35_0.png)
+![png](output_38_0.png)
 
 
 Second Survival rate by Parents/Children Aboard, the result was similar.
