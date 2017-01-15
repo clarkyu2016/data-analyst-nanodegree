@@ -16,7 +16,7 @@ subway_df = pd.read_csv('nyc_subway_weather.csv')
 ```
 
     Populating the interactive namespace from numpy and matplotlib
-    
+
 
 
 ```python
@@ -259,7 +259,7 @@ print rain_group.mean()
     11     1         4      2284.644330
     12     1         5      1317.855422
     13     1         6      1036.095344
-    
+
 
 
 ```python
@@ -367,9 +367,9 @@ plt.title('Ridership by Latitude and Longitude')
     231  40.878867 -73.904858
     232  40.885973 -73.878851
     233  40.889185 -73.898549
-    
+
     [234 rows x 2 columns]
-    
+
 
 
 
@@ -380,4 +380,3 @@ plt.title('Ridership by Latitude and Longitude')
 
 
 ![png](output_9_2.png)
-
