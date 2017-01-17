@@ -1,6 +1,5 @@
 
 # OpenStreetMap Data Case Study
-___
 
 ### Map Area
 Birmingham, United Kingdom
@@ -10,7 +9,6 @@ Birmingham, United Kingdom
 Birmingham is the city I live now, so I’m curious about what the database shows here.
 
 ## Problems in the Map
-___
 First, I downloaded the full zip files of Birmingham from Mapzen and select a small sample of it to check the data.
 
 
@@ -106,7 +104,6 @@ def update_name(name, mapping):
 ```
 
 ## Data Overview and Analysis
-___
 This part included an overview of data and other ideas.The SQL queries were applied here.
 
 ### File sizes
