@@ -1,3 +1,5 @@
+#Premier League Football Exploration
+
 This report explores a dataset containing 25+ variables for 5,170
 matches. It comes from <http://www.football-data.co.uk/englandm.php>
 
@@ -81,7 +83,7 @@ Overview
     ##  Mean   :0.09497   Mean   :2009  
     ##  3rd Qu.:0.00000   3rd Qu.:2013  
     ##  Max.   :2.00000   Max.   :2016  
-    ## 
+    ##
 
 winning times
 -------------
@@ -155,12 +157,12 @@ results?
 
 Home team
 
-    ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+    ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.
     ##    0.00    1.00    1.00    1.53    2.00    9.00
 
 Away team
 
-    ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+    ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.
     ##    0.00    0.00    1.00    1.13    2.00    6.00
 
 ![](Premier_League_Football_Exploration_files/figure-markdown_strict/unnamed-chunk-11-1.png)
@@ -308,7 +310,7 @@ Referee influence on th results
 
 Home team to away wins
 
-    ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+    ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.
     ##   0.000   1.327   1.643   1.621   1.887   4.333
 
 ![](Premier_League_Football_Exploration_files/figure-markdown_strict/unnamed-chunk-32-1.png)
@@ -330,7 +332,7 @@ cards.
 
 The summary of matches each referee officated
 
-    ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+    ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.
     ##    1.00    1.50   39.00   87.63  155.00  363.00
 
 Because the median number is 39, so I only choose the referees who
