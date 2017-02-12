@@ -7,6 +7,7 @@ This repository includes project reports and learning notes for Udacity DAND Nan
 - P2_Titanic_Data_analysis
 - P3_OpenStreetMap_Data_Case_Study
 - P4_Premier_League_Football_Exploration
+- P5_Identify_Fraud_from_Enron_Email
 
 
 ## License
