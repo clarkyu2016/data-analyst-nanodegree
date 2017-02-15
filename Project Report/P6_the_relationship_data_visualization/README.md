@@ -1,5 +1,7 @@
 # The Relationship Between Pollution And Traffic Index Data Visualization
 
+The final visualiztaion is [here](http://bl.ocks.org/clarkyu2016/raw/66dcdc69e44236127c7b5be26aecd7c9/).
+
 ## Summary
 Nowadays, pollution and traffic jam are two major problems. I think these two things have some correlation. For example, if the commute time is longer, maybe more CO2 emissions will caused. So I collect the pollution index data and traffic index data from different countries and to show their relationship.
 
