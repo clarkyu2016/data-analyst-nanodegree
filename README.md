@@ -9,6 +9,8 @@ This repository includes project reports and learning notes for Udacity DAND Nan
 - P4_Premier_League_Football_Exploration
 - P5_Identify_Fraud_from_Enron_Email
 - P6_the_relationship_data_visualization
+- P7_Design_an_A_B_Test
+- Resume
 
 
 ## License
