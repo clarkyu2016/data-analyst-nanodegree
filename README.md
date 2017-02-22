@@ -17,7 +17,7 @@ I have graduated from Udacity Nanodegree on Feb 22, 2017.
 
 The certification is [here](certificate/certificate.pdf).
 
-![thumbnail](certificate\thumbnail.png)
+![Become a data analyst!](certificate/thumbnail.png)
 
 ## License
 
