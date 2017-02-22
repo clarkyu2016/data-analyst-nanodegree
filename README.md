@@ -15,7 +15,7 @@ This repository includes project reports and learning notes for Udacity DAND Nan
 ## Graduation
 I have graduated from Udacity Nanodegree on Feb 22, 2017.
 
-The certification is [here](certificate\certificate.pdf).
+The certification is [here](certificate/certificate.pdf).
 
 ![thumbnail](certificate\thumbnail.png)
 
